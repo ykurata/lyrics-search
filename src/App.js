@@ -6,13 +6,13 @@ import Navbar from './components/layout/Navbar';
 import Index from './components/layout/Index';
 import Lyrics from './components/tracks/Lyrics';
 
-import { Provider } from './context';
+import { ContextController } from './context';
 
 function App() {
   return (
-    <Provider>
+    <ContextController>
       <Router>
-      <React.Fragment>
+      <>
         <Navbar />
         <div className="container">
           <Switch>
@@ -20,9 +20,9 @@ function App() {
             <Route exact path="/lyrics/track/:id" component={Lyrics} />
           </Switch>
         </div>
-      </React.Fragment>
+      </>
       </Router>
-    </Provider>
+    </ContextController>
   );
 }
 
